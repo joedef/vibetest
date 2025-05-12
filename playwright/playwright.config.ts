@@ -4,10 +4,6 @@ export default defineConfig({
   // Look for test files in the "tests" directory, relative to this configuration file.
   testDir: 'tests',
 
-  // Ignore k6 test files
-  testIgnore: ['**/k6/**'],
-  testMatch: ['**/*.spec.{ts,js}'],  // you decide the suffix
-
   // Run all tests in parallel.
   fullyParallel: true,
 
