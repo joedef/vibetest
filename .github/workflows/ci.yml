@@ -40,14 +40,14 @@ jobs:
       - name: Run Playwright tests
         run: npx playwright test
 
-      # - name: Install k6
-      #   run: |
-      #     sudo apt update
-      #     sudo apt install -y gnupg software-properties-common
-      #     sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 33BD3F9A
-      #     echo "deb https://dl.k6.io/deb stable main" | sudo tee /etc/apt/sources.list.d/k6.list
-      #     sudo apt update
-      #     sudo apt install -y k6
+      - name: Install k6
+        run: |
+          sudo apt update
+          sudo apt install -y gnupg software-properties-common
+          sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 33BD3F9A
+          echo "deb https://dl.k6.io/deb stable main" | sudo tee /etc/apt/sources.list.d/k6.list
+          sudo apt update
+          sudo apt install -y k6
 
-      # - name: Run k6 tests
-      #   run: k6 run k6/performance.test.js
+      - name: Run k6 tests
+        run: k6 run k6/performance.test.js
