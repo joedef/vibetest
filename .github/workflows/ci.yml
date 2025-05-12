@@ -34,11 +34,11 @@ jobs:
             sleep 5
           done
 
-      # - name: Install Playwright
-      #   run: npx playwright install --with-deps
+      - name: Install Playwright
+        run: npx playwright install --with-deps
 
-      # - name: Run Playwright tests
-      #   run: npx playwright test
+      - name: Run Playwright tests
+        run: npx playwright test
 
       # - name: Install k6
       #   run: |
