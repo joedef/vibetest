@@ -2,7 +2,7 @@ name: CI Pipeline
 
 on:
   push:
-    branches: [ main, playwright-tests ]
+    branches: [ main, database-in-pipeline ]
   pull_request:
     branches: [ main ]
 
