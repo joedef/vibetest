@@ -38,7 +38,7 @@ jobs:
 
       - name: Create database tables
         run: |
-          PGPASSWORD=postgres psql -h localhost -U postgres -d vibetest -c "
+          PGPASSWORD=postgres psql -h localhost -U joe -d vibetest -c "
           CREATE TABLE test_cases (
               id SERIAL PRIMARY KEY,
               title VARCHAR(255) NOT NULL,
@@ -74,8 +74,8 @@ jobs:
 
       - name: Start the app
         env:
-          DB_USER: postgres
-          DB_PASSWORD: postgres
+          DB_USER: joe
+          DB_PASSWORD: 1q2w3e4r
           DB_HOST: localhost
           DB_PORT: 5432
           DB_NAME: vibetest
