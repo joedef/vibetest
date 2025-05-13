@@ -1,0 +1,223 @@
+{
+  "info": {
+    "name": "Test Case and Bug Tracker",
+    "description": "API collection for managing test cases and bugs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Test Cases",
+      "item": [
+        {
+          "name": "Get All Test Cases",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/testcases",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "testcases"]
+            }
+          }
+        },
+        {
+          "name": "Get Test Case by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/testcases/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "testcases", "1"]
+            }
+          }
+        },
+        {
+          "name": "Create Test Case",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"Login Functionality Test\",\n    \"description\": \"Verify user can login with valid credentials\",\n    \"preconditions\": \"User account exists and is not locked\",\n    \"steps\": \"1. Navigate to login page\\n2. Enter valid username\\n3. Enter valid password\\n4. Click login button\",\n    \"expected_result\": \"User should be successfully logged in and redirected to dashboard\",\n    \"priority\": \"High\",\n    \"status\": \"Ready\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/testcases",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "testcases"]
+            }
+          }
+        },
+        {
+          "name": "Update Test Case",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"Updated Login Test\",\n    \"description\": \"Updated description for login test\",\n    \"preconditions\": \"Updated preconditions\",\n    \"steps\": \"1. Updated step 1\\n2. Updated step 2\",\n    \"expected_result\": \"Updated expected result\",\n    \"priority\": \"Medium\",\n    \"status\": \"Draft\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/testcases/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "testcases", "1"]
+            }
+          }
+        },
+        {
+          "name": "Delete Test Case",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/testcases/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "testcases", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Bugs",
+      "item": [
+        {
+          "name": "Get All Bugs",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/bugs",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "bugs"]
+            }
+          }
+        },
+        {
+          "name": "Get Bug by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/bugs/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "bugs", "1"]
+            }
+          }
+        },
+        {
+          "name": "Create Bug",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"Login Button Not Responding\",\n    \"description\": \"Login button remains unresponsive after clicking\",\n    \"status\": \"Open\",\n    \"severity\": \"Major\",\n    \"reported_by\": \"John Doe\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/bugs",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "bugs"]
+            }
+          }
+        },
+        {
+          "name": "Update Bug",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"Updated Bug Title\",\n    \"description\": \"Updated bug description\",\n    \"status\": \"In Progress\",\n    \"severity\": \"Critical\",\n    \"reported_by\": \"Jane Smith\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/bugs/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "bugs", "1"]
+            }
+          }
+        },
+        {
+          "name": "Delete Bug",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/bugs/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "bugs", "1"]
+            }
+          }
+        },
+        {
+          "name": "Link Bug to Test Case",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/bugs/1/link/2",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "bugs", "1", "link", "2"]
+            }
+          }
+        },
+        {
+          "name": "Unlink Bug from Test Case",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/bugs/1/link/2",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "bugs", "1", "link", "2"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+} 
