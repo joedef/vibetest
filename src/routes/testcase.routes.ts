@@ -6,7 +6,7 @@ const router = Router();
 // Get all test cases
 router.get('/', async (req: Request, res: Response) => {
   try {
-    const result = await pool.query('SELECT * FROM test_cases ORDER BY created_at DESC');
+    const result = await pool.query('SELECT * FROM test_cases');
     res.json(result.rows);
   } catch (error) {
     console.error('Error fetching test cases:', error);
